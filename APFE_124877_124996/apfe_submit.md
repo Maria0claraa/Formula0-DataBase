@@ -8,13 +8,13 @@
 
 O projeto consiste na criação de uma base de dados relacional destinada à gestão de um campeonato de corridas automóveis, inspirado na Fórmula 1. O sistema tem como objetivo estruturar e armazenar informações sobre temporadas, circuitos, corridas, sessões, pilotos, equipas, contratos e resultados.
 
-## ​Análise de Requi\sitos / Requirements
+## ​Análise de Requisitos / Requirements
 
 O Visitante deverá poder:
 * Visualizar a classificação atual de um determinado piloto na temporada atual;
 * Visualizar a classificação atual de uma determinada equipa na tenporada atual;
 * Visualizar tabelas de classificação de temporadas passadas de pilotos ou equipas;
-* Ver a lsita completa de corridas passadas da temporada;
+* Ver a lista completa de corridas passadas da temporada;
 * Ver os resultados detalhados de cada sessão;
 * Ver a grelha de partida e a classificação final de um piloto numa determinada corrida/sessão;
 * Ver o estado de cada sessão( ex: cancelada, adiada, etc...);   
