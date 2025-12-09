@@ -64,17 +64,19 @@ namespace ProjetoFBD
             Button btnSave = CreateActionButton("Save Changes", new Point(0, 5));
             Button btnAdd = CreateActionButton("Add New", new Point(140, 5));
             Button btnDelete = CreateActionButton("Delete Selected", new Point(280, 5));
+            Button btnRefresh = CreateActionButton("Refresh", new Point(420, 5)); // <-- NOVO BOTÃO
 
             btnSave.Click += btnSave_Click;
             btnAdd.Click += btnAdd_Click;
             btnDelete.Click += btnDelete_Click;
+            btnRefresh.Click += btnRefresh_Click; // <-- NOVO EVENTO
             this.pnlStaffActions.Controls.Add(btnDelete);
             // You will need to implement btnDelete_Click separately
             
             pnlStaffActions.Controls.Add(btnSave);
             pnlStaffActions.Controls.Add(btnAdd);
             pnlStaffActions.Controls.Add(btnDelete);
-
+            pnlStaffActions.Controls.Add(btnRefresh);
             
             // --- 3. Role-Based Access Control (RBAC) ---
             if (this.userRole == "Staff")
@@ -266,6 +268,32 @@ private void btnDelete_Click(object? sender, EventArgs e)
                 circuitoTable.RejectChanges(); // Reverte a eliminação se houver erro
             }
         }
+    }
+}
+
+// No CircuitForm.cs (Adicione junto dos outros métodos de evento, ex: btnSave_Click)
+
+private void btnRefresh_Click(object? sender, EventArgs e)
+{
+    // Confirma as alterações pendentes para evitar perda de dados
+    if (circuitoTable != null && circuitoTable.GetChanges() != null)
+    {
+        DialogResult result = MessageBox.Show(
+            "You have unsaved changes. Do you want to discard them and refresh the data?",
+            "Unsaved Changes",
+            MessageBoxButtons.YesNo,
+            MessageBoxIcon.Warning);
+
+        if (result == DialogResult.Yes)
+        {
+            circuitoTable.RejectChanges();
+            LoadCircuitoData(); // Recarrega os dados do banco de dados
+        }
+        // Se o utilizador clicar em 'No', não faz nada.
+    }
+    else
+    {
+        LoadCircuitoData(); // Não há alterações pendentes, carrega diretamente.
     }
 }
 // Ficheiro: CircuitForm.cs

@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Formula0-DataBase")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8ccc59876d48e47c68c5a21975b14ebe333cef8b")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bda185486647cd52c7ca18b5fe22bd23f721281c")]
 [assembly: System.Reflection.AssemblyProductAttribute("Formula0-DataBase")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Formula0-DataBase")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
